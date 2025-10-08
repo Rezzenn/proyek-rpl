@@ -1,0 +1,106 @@
+/* --- Import Font Tegas dari Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap');
+
+/* --- Variabel Global Tema Mecha --- */
+:root {
+    --accent-orange: #ff6a00;
+    --dark-metal: #1a1f24;
+    --panel-bg: #2a3138;
+    --text-digital: #e0e0e0;
+    --font-utama: 'Changa', sans-serif;
+}
+
+/* --- Reset & Gaya Dasar --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-utama);
+    background-color: var(--dark-metal);
+    /* Tambahan: Tekstur noise halus untuk nuansa industrial */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%232a3138' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    color: var(--text-digital);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Layout Utama --- */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* --- Kartu Profil Mecha --- */
+.kartu-profil {
+    display: flex;
+    align-items: center;
+    background-color: var(--panel-bg);
+    padding: 30px;
+    max-width: 650px;
+    width: 100%;
+    border-left: 3px solid var(--accent-orange);
+
+    /* Kunci utama tema ini: memotong sudut kartu agar terlihat seperti panel */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+}
+
+.foto-profil {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+    border: 3px solid var(--accent-orange);
+    flex-shrink: 0;
+    filter: grayscale(30%) sepia(20%); /* Filter agar foto lebih menyatu dengan tema */
+}
+
+.detail-profil p {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+}
+
+.detail-profil p:last-child {
+    margin-bottom: 0;
+}
+
+.detail-profil p strong {
+    display: inline-block;
+    width: 120px;
+    font-weight: 700;
+    color: var(--accent-orange);
+    /* Efek teks digital yang tajam, tanpa blur */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+
+/* --- Tombol Mecha --- */
+.tombol-navigasi {
+    display: inline-block;
+    padding: 15px 35px;
+    font-family: var(--font-utama);
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-digital);
+    background-color: transparent;
+    border: 2px solid var(--accent-orange);
+    transition: all 0.3s ease;
+    
+    /* Sudut tombol juga dipotong agar serasi */
+    clip-path: polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+}
+
+.tombol-navigasi:hover {
+    background-color: var(--accent-orange);
+    color: var(--dark-metal);
+    text-shadow: none;
+}

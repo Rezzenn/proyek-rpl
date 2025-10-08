@@ -1,0 +1,179 @@
+/* Import font dari Google Fonts untuk nuansa futuristik */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* --- ANIMASI UTAMA --- */
+@keyframes pulseGlow {
+  0% {
+    /* [PERUBAHAN] Cahaya diubah menjadi biru tua yang lebih gelap */
+    box-shadow: 0 0 4px #0a74da, 0 0 8px #0a74da, 0 0 16px #0a74da, 0 0 25px #053b70;
+  }
+  50% {
+    box-shadow: 0 0 8px #0a74da, 0 0 16px #0a74da, 0 0 30px #0a74da, 0 0 50px #053b70;
+  }
+  100% {
+    box-shadow: 0 0 4px #0a74da, 0 0 8px #0a74da, 0 0 16px #0a74da, 0 0 25px #053b70;
+  }
+}
+
+/* --- GAYA DASAR HALAMAN --- */
+body {
+    /* [PERUBAHAN] Latar belakang dibuat lebih gelap, dari abu-abu tua ke hitam pekat */
+    background: radial-gradient(ellipse at center, #0d1218 0%, #000000 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* --- BINGKAI JAM --- */
+.clock {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    position: relative;
+    background: none;
+    /* [PERUBAHAN] Warna border disesuaikan */
+    border: 3px solid #0a74da;
+    animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* --- WAJAH JAM & PENANDA WAKTU --- */
+.clock-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.clock-face::before,
+.clock-face::after {
+    content: '';
+    position: absolute;
+    /* [PERUBAHAN] Warna penanda disesuaikan */
+    background-color: #0d61b6;
+    box-shadow: 0 0 5px #0a74da;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.clock-face::before {
+    width: 3px;
+    height: 90%;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clock-face::after {
+    width: 90%;
+    height: 3px;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* --- BAGIAN JARUM JAM (Seperti yang Anda minta) --- */
+.hand {
+    width: 50%;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    border-radius: 2px;
+}
+
+.hour-hand {
+    width: 35%;
+    left: 15%;
+    height: 6px;
+    /* [PERUBAHAN] Warna jarum jam diubah menjadi pink yang lebih soft */
+    background-color: #e91e63;
+    filter: drop-shadow(0 0 3px #e91e63) drop-shadow(0 0 6px #e91e63);
+    z-index: 8;
+}
+
+.min-hand {
+    width: 45%;
+    left: 5%;
+    background-color: #f1c40f; /* Warna kuning tetap untuk kontras */
+    filter: drop-shadow(0 0 3px #f1c40f) drop-shadow(0 0 6px #f1c40f);
+    z-index: 9;
+}
+
+.second-hand {
+    width: 48%;
+    left: 2%;
+    height: 2px;
+    /* [PERUBAHAN] Warna jarum detik disesuaikan dengan tema biru tua */
+    background-color: #0a74da;
+    filter: drop-shadow(0 0 3px #0a74da) drop-shadow(0 0 6px #0a74da);
+    z-index: 10;
+}
+/* --- AKHIR BAGIAN JARUM JAM --- */
+
+
+/* --- TITIK TENGAH JAM --- */
+.clock-face::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    /* [PERUBAHAN] Warna titik tengah disesuaikan */
+    background: #0a74da;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #0d1a26;
+    box-shadow: 0 0 5px #0a74da, 0 0 10px #0a74da;
+    z-index: 11;
+}
+
+/* --- BAGIAN ANGKA --- */
+.number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    /* [PERUBAHAN] Warna angka disesuaikan */
+    color: #0a74da;
+    text-shadow: 0 0 5px #0a74da, 0 0 10px #0a74da;
+    z-index: 5;
+}
+
+.number-1 { transform: rotate(30deg); }
+.number-2 { transform: rotate(60deg); }
+.number-3 { transform: rotate(90deg); }
+.number-4 { transform: rotate(120deg); }
+.number-5 { transform: rotate(150deg); }
+.number-6 { transform: rotate(180deg); }
+.number-7 { transform: rotate(210deg); }
+.number-8 { transform: rotate(240deg); }
+.number-9 { transform: rotate(270deg); }
+.number-10 { transform: rotate(300deg); }
+.number-11 { transform: rotate(330deg); }
+.number-12 { transform: rotate(360deg); }
+
+.number > div {
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.number-1 > div { transform: rotate(-30deg); }
+.number-2 > div { transform: rotate(-60deg); }
+.number-3 > div { transform: rotate(-90deg); }
+.number-4 > div { transform: rotate(-120deg); }
+.number-5 > div { transform: rotate(-150deg); }
+.number-6 > div { transform: rotate(-180deg); }
+.number-7 > div { transform: rotate(-210deg); }
+.number-8 > div { transform: rotate(-240deg); }
+.number-9 > div { transform: rotate(-270deg); }
+.number-10 > div { transform: rotate(-300deg); }
+.number-11 > div { transform: rotate(-330deg); }
+.number-12 > div { transform: rotate(-360deg); }

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/* Reset dan Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Latar belakang gelap agar efek neon terlihat menonjol */
+    background-color: #0a0a0a;
+}
+
+/* Kontainer Utama Login */
+.login-container {
+    width: 380px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 40px 30px;
+    border: 2px solid #00ffff; /* Garis tepi warna cyan */
+    /* EFEK NEON GLOW utama menggunakan box-shadow */
+    box-shadow: 0 0 5px #00ffff, 
+                0 0 15px #00ffff, 
+                0 0 30px #00ffff;
+}
+
+/* Foto Profil */
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: block;
+    object-fit: cover;
+    border: 3px solid #f0f; /* Garis tepi warna magenta/pink */
+    /* Efek glow untuk avatar */
+    box-shadow: 0 0 5px #f0f, 
+                0 0 15px #f0f;
+}
+
+/* Grup Input (Ikon + Kotak Teks) */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff; /* Warna ikon cyan */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: none;
+    background: transparent; /* Latar belakang transparan */
+    border-bottom: 2px solid #00ffff; /* Garis bawah neon */
+    font-size: 16px;
+    color: #fff; /* Warna teks putih */
+    transition: all 0.3s ease;
+}
+
+/* Mengubah warna placeholder */
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-bottom-color: #f0f; /* Ubah warna garis bawah saat aktif */
+    box-shadow: 0 5px 15px -5px rgba(255, 0, 255, 0.5); /* Efek glow saat aktif */
+}
+
+/* Pilihan (Remember me & Forgot Password) */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-me label {
+    margin-left: 8px;
+}
+
+.forgot-password a {
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #f0f;
+    text-shadow: 0 0 5px #f0f;
+}
+
+/* Tombol Login */
+.nav-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f0f;
+    background: transparent;
+    color: #f0f;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Efek glow untuk tombol */
+    box-shadow: 0 0 5px #f0f, 0 0 10px #f0f;
+}
+
+.nav-button:hover {
+    background-color: #f0f;
+    color: #000;
+    /* Efek glow lebih intens saat disentuh mouse */
+    box-shadow: 0 0 5px #f0f, 
+                0 0 25px #f0f, 
+                0 0 50px #f0f;
+}

@@ -1,0 +1,222 @@
+/* === Import Font dari Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@700&display=swap');
+
+/* --- 01. Variabel Global & Reset --- */
+:root {
+    --bg-color: #f0f4f8; /* Warna background sedikit lebih lembut */
+    --card-bg-color: #ffffff;
+    --text-color: #34495e; /* Warna teks sedikit lebih gelap untuk kontras */
+    --primary-color: #007bff;
+    --primary-light-color: #e6f2ff;
+    --border-color: #dfe6e9;
+    --shadow-color: rgba(45, 55, 72, 0.1);
+    --shadow-hover-color: rgba(0, 123, 255, 0.2);
+    --animation-duration: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- 02. Gaya Body & Layout Utama --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, var(--bg-color) 100%);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    overflow-x: hidden; /* Mencegah scroll horizontal saat animasi */
+}
+
+/* --- 03. Animasi Keyframes --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--primary-light-color), 0 0 10px var(--primary-light-color);
+    }
+    50% {
+        box-shadow: 0 0 15px var(--primary-light-color), 0 0 25px var(--primary-light-color);
+    }
+}
+
+
+/* --- 04. Navigasi Utama --- */
+nav {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--card-bg-color);
+    border-radius: 16px; /* Sudut lebih tumpul */
+    padding: 0.75rem;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Gap sedikit dikurangi agar lebih rapat */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all var(--animation-duration) ease;
+}
+
+nav a:hover {
+    background-color: var(--primary-light-color);
+    color: var(--primary-color);
+    transform: translateY(-3px); /* Efek terangkat saat hover */
+}
+
+nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px var(--shadow-hover-color);
+}
+
+nav a:active {
+    transform: translateY(1px) scale(0.98); /* Efek ditekan ke dalam */
+    filter: brightness(0.95);
+}
+
+/* --- 05. Kontainer Konten Utama --- */
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    text-align: center;
+    /* Animasi muncul dengan sedikit delay dari navigasi */
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 0.2s forwards;
+}
+
+/* --- 06. Tipografi --- */
+h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+h2 {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    text-align: left;
+}
+p {
+    text-align: left;
+    line-height: 1.7; /* Line height ditingkatkan untuk keterbacaan */
+    margin-bottom: 1rem;
+    color: #555;
+}
+ul {
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* --- 07. Komponen Jam --- */
+.clock-section {
+    margin-bottom: 2rem;
+}
+
+.time-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    background-color: var(--primary-light-color);
+    padding: 1rem 0;
+    border-radius: 12px;
+    letter-spacing: 3px;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    /* Animasi denyut halus */
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.world-clocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Lebih responsif */
+    gap: 1rem;
+}
+
+.world-time-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.75rem;
+    color: var(--text-color);
+    background-color: #f8f9fa;
+    padding: 0.75rem 0;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: transform var(--animation-duration) ease, box-shadow var(--animation-duration) ease;
+}
+
+.world-time-display:hover {
+    transform: scale(1.05); /* Sedikit membesar saat disentuh */
+    box-shadow: 0 5px 15px var(--shadow-color);
+    z-index: 10;
+}
+
+/* --- 08. Tombol Navigasi Halaman --- */
+.page-navigation {
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.nav-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem; /* Lebih lebar */
+    border-radius: 50px; /* Bentuk pil */
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px var(--shadow-hover-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow-hover-color);
+}
+
+.nav-button:active {
+    transform: translateY(1px) scale(0.97);
+    box-shadow: none;
+}

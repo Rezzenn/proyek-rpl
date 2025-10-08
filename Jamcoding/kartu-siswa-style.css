@@ -1,0 +1,106 @@
+/* Import font dari Google untuk tampilan yang lebih elegan */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Pengaturan Dasar Halaman */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6; /* Latar belakang abu-abu muda yang lembut */
+    color: #333; /* Warna teks gelap agar mudah dibaca */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+/* Wadah untuk semua kartu */
+.container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Jarak otomatis antar kartu */
+}
+
+/* Desain untuk setiap kartu siswa */
+.kartu-siswa {
+    background-color: #ffffff;
+    border-radius: 12px; /* Sudut lebih tumpul */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan yang halus */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus */
+}
+
+.kartu-siswa:hover {
+    transform: translateY(-5px); /* Sedikit terangkat saat disentuh kursor */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Desain untuk foto profil */
+.foto-profil {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%; /* Membuat frame menjadi lingkaran */
+    margin-right: 20px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 3px solid #007bff; /* Garis tepi biru */
+}
+
+.foto-profil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar pas tanpa gepeng */
+}
+
+/* Desain untuk teks informasi siswa */
+.info-siswa {
+    line-height: 1.6;
+}
+
+.info-siswa p {
+    margin: 0;
+}
+
+.info-siswa .nama {
+    font-size: 1.25em;
+    font-weight: 600; /* Sedikit lebih tebal */
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.info-siswa strong {
+    color: #555;
+}
+
+/* ===== DESAIN UNTUK TOMBOL NAVIGASI BARU ===== */
+.navigasi-halaman {
+    margin-top: 30px; /* Jarak dari kartu terakhir */
+    text-align: center;
+}
+
+.btn-navigasi {
+    display: inline-block;
+    background-color: #007bff; /* Warna biru primer */
+    color: #ffffff; /* Teks putih */
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-navigasi:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat disentuh */
+    transform: translateY(-2px);
+}
