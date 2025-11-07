@@ -1,0 +1,353 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f1f5f9;
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* === Navbar === */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 15px 50px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.navbar a:hover {
+  color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* Tombol Mode */
+.mode-toggle {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+.mode-toggle:hover {
+  background: #1e40af;
+}
+
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  color: white;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #1d4ed8;
+  box-shadow: 0 5px 15px rgba(29, 78, 216, 0.4);
+  transform: translateY(-2px);
+}
+
+/* === Produk Section === */
+.produk-container {
+  padding: 60px 40px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+}
+
+.produk-container h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: #1e293b;
+}
+
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.produk-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+.produk-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.produk-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+.produk-card:hover img {
+  transform: scale(1.05);
+}
+
+.produk-card h3 {
+  font-size: 1.2em;
+  color: #111827;
+}
+
+.produk-card p {
+  margin: 10px 0;
+  color: #475569;
+}
+
+.produk-card .btn {
+  background: #3b82f6;
+  font-size: 0.9em;
+  padding: 10px 18px;
+}
+.produk-card .btn:hover {
+  background: #1d4ed8;
+}
+
+/* === Cart === */
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-container th, .cart-container td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px;
+  text-align: center;
+}
+
+.cart-container th {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.cart-container h3 {
+  text-align: right;
+  margin-top: 20px;
+  color: #111827;
+}
+
+/* === Checkout === */
+.checkout {
+  max-width: 500px;
+  margin: 80px auto;
+  background: white;
+  color: #222;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+}
+
+.checkout h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #1e293b;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-form input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.checkout-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0,123,255,0.5);
+}
+
+.checkout-form .btn {
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.checkout-form .btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.03);
+}
+
+/* === Footer === */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e293b;
+  color: white;
+  font-size: 0.95em;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .produk-card img {
+    height: 180px;
+  }
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark-mode .navbar {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark-mode .produk-card {
+  background: #1e293b;
+  color: #f1f5f9;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .checkout {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+body.dark-mode .checkout-form input {
+  background: #334155;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+
+body.dark-mode .checkout-form input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 4px rgba(96,165,250,0.5);
+}
+
+body.dark-mode .checkout-form .btn {
+  background: #3b82f6;
+}
+
+body.dark-mode .checkout-form .btn:hover {
+  background: #2563eb;
+}
+
+body.dark-mode .footer {
+  background: #1e293b;
+  color: #94a3b8;
+}
+
+body.dark-mode .mode-toggle {
+  background: #e2e8f0;
+  color: #1e293b;
+}
